@@ -1,5 +1,5 @@
 {
-	"name": "tharos/leanquery",
+	"name": "mibk/leanquery",
 	"homepage": "http://www.leanmapper.com",
 	"license": "MIT",
 	"authors": [
@@ -13,7 +13,7 @@
 		}
 	},
 	"require": {
-		"tharos/leanmapper": "dev-develop"
+		"tharos/leanmapper": ">=2.3"
 	},
 	"require-dev": {
 		"nette/tester": "dev-master"
