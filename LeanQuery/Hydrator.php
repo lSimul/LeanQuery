@@ -2,7 +2,7 @@
 
 namespace LeanQuery;
 
-use DibiRow;
+use Dibi;
 use LeanMapper\Connection;
 use LeanMapper\Exception\InvalidArgumentException;
 use LeanMapper\IMapper;
@@ -32,7 +32,7 @@ class Hydrator
 	}
 
 	/**
-	 * @param DibiRow[] $data
+	 * @param Dibi\Row[] $data
 	 * @param HydratorMeta $hydratorMeta
 	 * @param array|null $relationshipsFilter
 	 * @return array

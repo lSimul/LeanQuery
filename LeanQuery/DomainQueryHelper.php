@@ -3,7 +3,7 @@
 namespace LeanQuery;
 
 use ArrayObject;
-use DibiFluent;
+use Dibi;
 use LeanMapper\Exception\InvalidArgumentException;
 use LeanMapper\IMapper;
 use LeanMapper\Reflection\EntityReflection;
@@ -224,8 +224,8 @@ class DomainQueryHelper
 				$this->awaitedParameters--;
 			} else {
 				if (!empty($this->clauses->where)) {
-					if (isset(DibiFluent::$separators['WHERE'])) {
-						$this->clauses->where[] = DibiFluent::$separators['WHERE'];
+					if (isset(Dibi\Fluent::$separators['WHERE'])) {
+						$this->clauses->where[] = Dibi\Fluent::$separators['WHERE'];
 					}
 				}
 				$this->clauses->where[] = preg_replace_callback($pattern, array($this, 'translateMatches'), $argument);
