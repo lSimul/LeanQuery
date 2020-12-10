@@ -7,6 +7,9 @@
 			"name": "Vojtěch Kohout"
 		}
 	],
+	"scripts": {
+		"test": "vendor/bin/tester tests"
+	},
 	"autoload": {
 		"psr-0": {
 			"LeanQuery": ""
@@ -16,6 +19,6 @@
 		"tharos/leanmapper": ">=2.3"
 	},
 	"require-dev": {
-		"nette/tester": "dev-master"
+		"nette/tester": "^2.0"
 	}
 }
