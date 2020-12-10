@@ -26,11 +26,11 @@ $books = $domainQuery->getEntities();
 $output = '';
 
 foreach ($books as $book) {
-	$output .= "$book->name\r\n";
-	$output .= "\tAuthor: {$book->author->name}\r\n";
-	$output .= "\tTags:\r\n";
+	$output .= "$book->name\n";
+	$output .= "\tAuthor: {$book->author->name}\n";
+	$output .= "\tTags:\n";
 	foreach ($book->tags as $tag) {
-		$output .= "\t\t$tag->name\r\n";
+		$output .= "\t\t$tag->name\n";
 	}
 }
 
@@ -91,8 +91,8 @@ $books = $domainQuery->getEntities();
 $output = '';
 
 foreach ($books as $book) {
-	$output .= "$book->name\r\n";
-	$output .= "\tAuthor: {$book->author->name}\r\n";
+	$output .= "$book->name\n";
+	$output .= "\tAuthor: {$book->author->name}\n";
 }
 
 Assert::count(1, $queries);
@@ -134,11 +134,11 @@ $books = $domainQuery->getEntities();
 $output = '';
 
 foreach ($books as $book) {
-	$output .= "$book->name\r\n";
-	$output .= "\tAuthor: {$book->author->name}\r\n";
-	$output .= "\tTags:\r\n";
+	$output .= "$book->name\n";
+	$output .= "\tAuthor: {$book->author->name}\n";
+	$output .= "\tTags:\n";
 	foreach ($book->tags as $tag) {
-		$output .= "\t\t$tag->name\r\n";
+		$output .= "\t\t$tag->name\n";
 	}
 }
 
@@ -196,11 +196,11 @@ $books = $domainQuery->getEntities();
 $output = '';
 
 foreach ($books as $book) {
-	$output .= "$book->name\r\n";
-	$output .= "\tAuthor: {$book->author->name}\r\n";
-	$output .= "\tTags:\r\n";
+	$output .= "$book->name\n";
+	$output .= "\tAuthor: {$book->author->name}\n";
+	$output .= "\tTags:\n";
 	foreach ($book->tags as $tag) {
-		$output .= "\t\t$tag->name\r\n";
+		$output .= "\t\t$tag->name\n";
 	}
 }
 
@@ -253,15 +253,15 @@ $domainQuery = $domainQueryFactory->createQuery();
 $domainQuery->select('b, a')
 	->from('Book', 'b')
 	->join('b.author', 'a')
-	->where('a.name IN %in AND b.available = %b AND %sql', array('Martin Fowler', 'Thomas H. Cormen'), true, '1 = 1', 'AND a.name != ? AND b.name != "b.name"', 'a.name');
+	->where('a.name IN %in AND b.available = %b AND %sql AND a.name != ? AND b.name != "b.name"', array('Martin Fowler', 'Thomas H. Cormen'), true, '1 = 1', 'a.name');
 
 $books = $domainQuery->getEntities();
 
 $output = '';
 
 foreach ($books as $book) {
-	$output .= "$book->name\r\n";
-	$output .= "\tAuthor: {$book->author->name}\r\n";
+	$output .= "$book->name\n";
+	$output .= "\tAuthor: {$book->author->name}\n";
 }
 
 Assert::count(1, $queries);

@@ -40,13 +40,13 @@ $output = '';
 
 foreach ($authors as $author) {
 	$author = $authors->getRow($author['id']);
-	$output .= "$author->name\r\n";
+	$output .= "$author->name\n";
 	foreach ($author->referencing('book', 'author_id') as $book) {
-		$output .= "\t$book->name\r\n";
+		$output .= "\t$book->name\n";
 		$authorAgain = $book->referenced('author', 'author_id');
-		$output .= "\t\t$authorAgain->name\r\n";
+		$output .= "\t\t$authorAgain->name\n";
 		foreach ($authorAgain->referencing('book', 'author_id') as $bookAgain) {
-			$output .= "\t\t\t$bookAgain->name\r\n";
+			$output .= "\t\t\t$bookAgain->name\n";
 		}
 	}
 }
